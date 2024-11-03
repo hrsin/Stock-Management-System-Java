@@ -7,8 +7,8 @@ A Java-based application for managing stock portfolios with features for buying,
 ## Features
 
 ### Portfolio Management
-  * Buy and sell different types of investments
-  * Track multiple stocks simultaneously
+>> * Buy and sell different types of investments
+>> * Track multiple stocks simultaneously
   * Real-time portfolio value updates
   * Support for different investment types
 ### Visual Analytics
@@ -28,9 +28,9 @@ A Java-based application for managing stock portfolios with features for buying,
 
 ## Prerequisites
 
--* Java Development Kit (JDK) 8 or higher
--* Java Swing library (included in JDK)
--* JFreeChart library for visualization
+* Java Development Kit (JDK) 8 or higher
+* Java Swing library (included in JDK)
+* JFreeChart library for visualization
 
 ## Usage
 
