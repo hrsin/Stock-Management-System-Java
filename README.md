@@ -19,20 +19,18 @@ Features
   * Clear message feedback system
   * Input validation for all transactions
   * Easy-to-use form fields for stock operations
-
-
 ## Data Handling
-* Efficient stock quantity tracking
-* Support for batch transactions
-* Automatic percentage calculation for portfolio distribution
-
+  * Efficient stock quantity tracking
+  * Support for batch transactions
+  * Automatic percentage calculation for portfolio distribution
+---
 
 ## Prerequisites
 
 * Java Development Kit (JDK) 8 or higher
 * Java Swing library (included in JDK)
 * JFreeChart library for visualization
-
+---
 ## Usage
 
 ### Buying Stocks
@@ -51,12 +49,12 @@ Features
 
 ## Monitoring Portfolio
 1. The pie chart automatically updates to show the current portfolio distribution
----
-2. Each stock's percentage in the portfolio is calculated and displayed
----
-3. Color-coded messages indicate transaction success or failure
----
 
+2. Each stock's percentage in the portfolio is calculated and displayed
+
+3. Color-coded messages indicate transaction success or failure
+
+---
 ## Code Structure
 
 Src Files Overview
@@ -129,7 +127,7 @@ Main Application Window and Interface
     * Pie chart visualization
  * Coordinates communication between different panels
  * Updates the portfolio visualization in real-time
-
+---
 ## Error Handling
 
 The system includes comprehensive error checking for:
@@ -138,15 +136,14 @@ The system includes comprehensive error checking for:
 * Mismatched symbol and quantity counts
 * Transaction validation
 * Portfolio updates
-
+---
 ## Acknowledgments
 
 1. JFreeChart library for providing visualization capabilities
----
+
 2. Java Swing for the graphical user interface
----
+
 3. Contributors and maintainers of the project
----
 
 ## Support
 For support, please open an issue in the GitHub repository.
