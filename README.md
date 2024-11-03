@@ -36,24 +36,24 @@ A Java-based application for managing stock portfolios with features for buying,
 
 ### Buying Stocks
 
-> 1. Select the investment type from the dropdown menu
-
-2. Enter stock symbols (comma-separated for multiple stocks)
-
-3. Input the stock name
-
-4. Enter quantities (comma-separated, matching the number of symbols)
-
-5. Specify the price
-
-6. Click the "Buy" button to execute the transaction
+  1. Select the investment type from the dropdown menu
+  
+  2. Enter stock symbols (comma-separated for multiple stocks)
+  
+  3. Input the stock name
+  
+  4. Enter quantities (comma-separated, matching the number of symbols)
+  
+  5. Specify the price
+  
+  6. Click the "Buy" button to execute the transaction
 
 ## Monitoring Portfolio
-1. The pie chart automatically updates to show the current portfolio distribution
-
-2. Each stock's percentage in the portfolio is calculated and displayed
-
-3. Color-coded messages indicate transaction success or failure
+  1. The pie chart automatically updates to show the current portfolio distribution
+  
+  2. Each stock's percentage in the portfolio is calculated and displayed
+  
+  3. Color-coded messages indicate transaction success or failure
 
 ---
 ## Code Structure
