@@ -81,45 +81,45 @@ A Java-based application for managing stock portfolios with features for buying,
 
 #### 3. Stock.java
   Stock Investment Type
-    * Extends the Investment class
-    * Handles stock-specific calculations
-    * Manages stock validation rules
-    * Implements stock-specific price and value calculations
+   * Extends the Investment class
+   * Handles stock-specific calculations
+   * Manages stock validation rules
+   * Implements stock-specific price and value calculations
 
 #### 4. MutualFund.java
   Mutual Fund Investment Type
-    * Extends the Investment class
-    * Implements mutual fund-specific logic
-    * Handles redemption fee calculations
-    * Manages mutual fund-specific validation rules
+   * Extends the Investment class
+   * Implements mutual fund-specific logic
+   * Handles redemption fee calculations
+   * Manages mutual fund-specific validation rules
 
 #### 5. Portfolio.java
   Portfolio Management
-    * Maintains the list of all investments
-    * Handles buying and selling operations
-    * Manages investment updates and modifications
-    * Calculates total portfolio value
-    * Implements search and filter functionality
-    * Manages transaction history
+   * Maintains the list of all investments
+   * Handles buying and selling operations
+   * Manages investment updates and modifications
+   * Calculates total portfolio value
+   * Implements search and filter functionality
+   * Manages transaction history
 
 #### 6. MainGUI.java
   Main Application Window and Interface
-    * Creates and manages the primary application window
-    * Sets up the tabbed interface for different operations:
-      * Buy panel
-      * Sell panel
-      * Update panel
-      * Gain panel
-      * Search panel
-    * Manages the portfolio visualization components
-    * Implements the message area for user feedback
-    * Handles menu operations and window events
-    * Contains shared UI components:
-      * Message display area
-      * Type selection dropdown
-      * Input fields for stock data
-      * Action buttons
-      * Pie chart visualization
+   * Creates and manages the primary application window
+   * Sets up the tabbed interface for different operations:
+     * Buy panel
+     * Sell panel
+     * Update panel
+     * Gain panel
+     * Search panel
+   * Manages the portfolio visualization components
+   * Implements the message area for user feedback
+   * Handles menu operations and window events
+   * Contains shared UI components:
+     * Message display area
+     * Type selection dropdown
+     * Input fields for stock data
+     * Action buttons
+     * Pie chart visualization
    * Coordinates communication between different panels
    * Updates the portfolio visualization in real-time
 
