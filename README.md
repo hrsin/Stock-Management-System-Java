@@ -60,6 +60,7 @@ A Java-based application for managing stock portfolios with features for buying,
 
 ### Src Files Overview
 #### 1. Stock_Management.java
+
   Main Application Controller
    * Initializes the main application window
    * Sets up the GUI components and layout
@@ -69,14 +70,14 @@ A Java-based application for managing stock portfolios with features for buying,
 
 #### 2. Investment.java
   Investment Base Class
-    * Defines the basic structure for all investment types
-    * Contains common attributes:
-      * Symbol  
-      * Name
-      * Quantity
-      * Price
-      * Book value calculations
-    * Implements base investment validation logic
+   * Defines the basic structure for all investment types
+   * Contains common attributes:
+     * Symbol  
+     * Name
+     * Quantity
+     * Price
+     * Book value calculations
+   * Implements base investment validation logic
 
 #### 3. Stock.java
   Stock Investment Type
