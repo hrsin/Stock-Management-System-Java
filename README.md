@@ -68,7 +68,6 @@ A Java-based application for managing stock portfolios with features for buying,
    * Handles application-wide event management
 
 #### 2. Investment.java
-
   Investment Base Class
     * Defines the basic structure for all investment types
     * Contains common attributes:
@@ -80,7 +79,6 @@ A Java-based application for managing stock portfolios with features for buying,
     * Implements base investment validation logic
 
 #### 3. Stock.java
-
   Stock Investment Type
     * Extends the Investment class
     * Handles stock-specific calculations
@@ -88,7 +86,6 @@ A Java-based application for managing stock portfolios with features for buying,
     * Implements stock-specific price and value calculations
 
 #### 4. MutualFund.java
-
   Mutual Fund Investment Type
     * Extends the Investment class
     * Implements mutual fund-specific logic
@@ -96,7 +93,6 @@ A Java-based application for managing stock portfolios with features for buying,
     * Manages mutual fund-specific validation rules
 
 #### 5. Portfolio.java
-   
   Portfolio Management
     * Maintains the list of all investments
     * Handles buying and selling operations
@@ -106,7 +102,6 @@ A Java-based application for managing stock portfolios with features for buying,
     * Manages transaction history
 
 #### 6. MainGUI.java
-   
   Main Application Window and Interface
     * Creates and manages the primary application window
     * Sets up the tabbed interface for different operations:
