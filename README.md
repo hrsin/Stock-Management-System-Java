@@ -6,21 +6,21 @@ A Java-based application for managing stock portfolios with features for buying,
 
 ## Features
 
-### Portfolio Management
+### 1. Portfolio Management
   * Buy and sell different types of investments
   * Track multiple stocks simultaneously
   * Real-time portfolio value updates
   * Support for different investment types
-### Visual Analytics
+### 2. Visual Analytics
   * Interactive pie chart visualization of portfolio distribution
   * Color-coded performance indicators
   * Real-time graph updates on transactions
-### User Interface
+### 3. User Interface
   * Intuitive graphical interface built with Java Swing
   * Clear message feedback system
   * Input validation for all transactions
   * Easy-to-use form fields for stock operations
-### Data Handling
+### 4. Data Handling
   * Efficient stock quantity tracking
   * Support for batch transactions
   * Automatic percentage calculation for portfolio distribution
@@ -28,9 +28,9 @@ A Java-based application for managing stock portfolios with features for buying,
 
 ## Prerequisites
 
-* Java Development Kit (JDK) 8 or higher
-* Java Swing library (included in JDK)
-* JFreeChart library for visualization
+  * Java Development Kit (JDK) 8 or higher
+  * Java Swing library (included in JDK)
+  * JFreeChart library for visualization
 
 ## Usage
 
@@ -67,7 +67,7 @@ A Java-based application for managing stock portfolios with features for buying,
    * Contains the main portfolio instance
    * Handles application-wide event management
 
-### 2. Investment.java
+#### 2. Investment.java
 
   Investment Base Class
     * Defines the basic structure for all investment types
@@ -79,7 +79,7 @@ A Java-based application for managing stock portfolios with features for buying,
       * Book value calculations
     * Implements base investment validation logic
 
-### 3. Stock.java
+#### 3. Stock.java
 
   Stock Investment Type
     * Extends the Investment class
@@ -87,7 +87,7 @@ A Java-based application for managing stock portfolios with features for buying,
     * Manages stock validation rules
     * Implements stock-specific price and value calculations
 
-### 4. MutualFund.java
+#### 4. MutualFund.java
 
   Mutual Fund Investment Type
     * Extends the Investment class
@@ -95,7 +95,7 @@ A Java-based application for managing stock portfolios with features for buying,
     * Handles redemption fee calculations
     * Manages mutual fund-specific validation rules
 
-## 5. Portfolio.java
+#### 5. Portfolio.java
    
   Portfolio Management
     * Maintains the list of all investments
@@ -105,7 +105,7 @@ A Java-based application for managing stock portfolios with features for buying,
     * Implements search and filter functionality
     * Manages transaction history
 
-### 6. MainGUI.java
+#### 6. MainGUI.java
    
   Main Application Window and Interface
     * Creates and manages the primary application window
