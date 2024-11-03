@@ -3,23 +3,24 @@
 
 ## Stock Management System
 A Java-based application for managing stock portfolios with features for buying, selling, and visualizing investment data. This system provides a user-friendly graphical interface for tracking stock investments and analyzing portfolio performance.
-Features
 
-## Portfolio Management
+## Features
+
+### Portfolio Management
   * Buy and sell different types of investments
   * Track multiple stocks simultaneously
   * Real-time portfolio value updates
   * Support for different investment types
-## Visual Analytics
+### Visual Analytics
   * Interactive pie chart visualization of portfolio distribution
   * Color-coded performance indicators
   * Real-time graph updates on transactions
-## User Interface
+### User Interface
   * Intuitive graphical interface built with Java Swing
   * Clear message feedback system
   * Input validation for all transactions
   * Easy-to-use form fields for stock operations
-## Data Handling
+### Data Handling
   * Efficient stock quantity tracking
   * Support for batch transactions
   * Automatic percentage calculation for portfolio distribution
