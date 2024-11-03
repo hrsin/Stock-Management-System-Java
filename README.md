@@ -8,9 +8,9 @@ A Java-based application for managing stock portfolios with features for buying,
 
 ### Portfolio Management
 >> * Buy and sell different types of investments
->> * Track multiple stocks simultaneously
-  * Real-time portfolio value updates
-  * Support for different investment types
+   * Track multiple stocks simultaneously
+   * Real-time portfolio value updates
+   * Support for different investment types
 ### Visual Analytics
   * Interactive pie chart visualization of portfolio distribution
   * Color-coded performance indicators
