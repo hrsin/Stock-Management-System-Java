@@ -1,5 +1,6 @@
 # Stock-Management-System-Java
-## OOPL Java Mini Project for SEM - 3 A2 Batch
+### OOPL Java Mini Project for SEM - 3 A2 Batch
+
 ## Stock Management System
 A Java-based application for managing stock portfolios with features for buying, selling, and visualizing investment data. This system provides a user-friendly graphical interface for tracking stock investments and analyzing portfolio performance.
 Features
