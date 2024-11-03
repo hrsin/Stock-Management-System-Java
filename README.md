@@ -24,14 +24,14 @@ A Java-based application for managing stock portfolios with features for buying,
   * Efficient stock quantity tracking
   * Support for batch transactions
   * Automatic percentage calculation for portfolio distribution
----
+
 
 ## Prerequisites
 
-* Java Development Kit (JDK) 8 or higher
-* Java Swing library (included in JDK)
-* JFreeChart library for visualization
----
+-* Java Development Kit (JDK) 8 or higher
+-* Java Swing library (included in JDK)
+-* JFreeChart library for visualization
+
 ## Usage
 
 ### Buying Stocks
