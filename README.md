@@ -55,96 +55,94 @@ A Java-based application for managing stock portfolios with features for buying,
   
   3. Color-coded messages indicate transaction success or failure
 
----
+
 ## Code Structure
 
-Src Files Overview
-## 1. Stock_Management.java
+### Src Files Overview
+#### 1. Stock_Management.java
+  Main Application Controller
+   * Initializes the main application window
+   * Sets up the GUI components and layout
+   * Manages the main application flow
+   * Contains the main portfolio instance
+   * Handles application-wide event management
 
-Main Application Controller
+### 2. Investment.java
 
-  * Initializes the main application window
-  * Sets up the GUI components and layout
-  * Manages the main application flow
-  * Contains the main portfolio instance
-  * Handles application-wide event management
+  Investment Base Class
+    * Defines the basic structure for all investment types
+    * Contains common attributes:
+      * Symbol  
+      * Name
+      * Quantity
+      * Price
+      * Book value calculations
+    * Implements base investment validation logic
 
-## 2. Investment.java
+### 3. Stock.java
 
-Investment Base Class
-  * Defines the basic structure for all investment types
-  * Contains common attributes:
-    * Symbol  
-    * Name
-    * Quantity
-    * Price
-    * Book value calculations
-  * Implements base investment validation logic
+  Stock Investment Type
+    * Extends the Investment class
+    * Handles stock-specific calculations
+    * Manages stock validation rules
+    * Implements stock-specific price and value calculations
 
-## 3. Stock.java
+### 4. MutualFund.java
 
-Stock Investment Type
-  * Extends the Investment class
-  * Handles stock-specific calculations
-  * Manages stock validation rules
-  * Implements stock-specific price and value calculations
-
-## 4. MutualFund.java
-
-Mutual Fund Investment Type
-  * Extends the Investment class
-  * Implements mutual fund-specific logic
-  * Handles redemption fee calculations
-  * Manages mutual fund-specific validation rules
+  Mutual Fund Investment Type
+    * Extends the Investment class
+    * Implements mutual fund-specific logic
+    * Handles redemption fee calculations
+    * Manages mutual fund-specific validation rules
 
 ## 5. Portfolio.java
    
-Portfolio Management
-  * Maintains the list of all investments
-  * Handles buying and selling operations
-  * Manages investment updates and modifications
-  * Calculates total portfolio value
-  * Implements search and filter functionality
-  * Manages transaction history
+  Portfolio Management
+    * Maintains the list of all investments
+    * Handles buying and selling operations
+    * Manages investment updates and modifications
+    * Calculates total portfolio value
+    * Implements search and filter functionality
+    * Manages transaction history
 
-## 6. MainGUI.java
+### 6. MainGUI.java
    
-Main Application Window and Interface
-  * Creates and manages the primary application window
-  * Sets up the tabbed interface for different operations:
-    * Buy panel
-    * Sell panel
-    * Update panel
-    * Gain panel
-    * Search panel
-  * Manages the portfolio visualization components
-  * Implements the message area for user feedback
-  * Handles menu operations and window events
-  * Contains shared UI components:
-    * Message display area
-    * Type selection dropdown
-    * Input fields for stock data
-    * Action buttons
-    * Pie chart visualization
- * Coordinates communication between different panels
- * Updates the portfolio visualization in real-time
----
+  Main Application Window and Interface
+    * Creates and manages the primary application window
+    * Sets up the tabbed interface for different operations:
+      * Buy panel
+      * Sell panel
+      * Update panel
+      * Gain panel
+      * Search panel
+    * Manages the portfolio visualization components
+    * Implements the message area for user feedback
+    * Handles menu operations and window events
+    * Contains shared UI components:
+      * Message display area
+      * Type selection dropdown
+      * Input fields for stock data
+      * Action buttons
+      * Pie chart visualization
+   * Coordinates communication between different panels
+   * Updates the portfolio visualization in real-time
+
 ## Error Handling
 
-The system includes comprehensive error checking for:
-* Invalid input formats
-* Number format exceptions
-* Mismatched symbol and quantity counts
-* Transaction validation
-* Portfolio updates
----
+  The system includes comprehensive error checking for:
+  * Invalid input formats
+  * Number format exceptions
+  * Mismatched symbol and quantity counts
+  * Transaction validation
+  * Portfolio updates
+
 ## Acknowledgments
 
-1. JFreeChart library for providing visualization capabilities
-
-2. Java Swing for the graphical user interface
-
-3. Contributors and maintainers of the project
+  1. JFreeChart library for providing visualization capabilities
+  
+  2. Java Swing for the graphical user interface
+  
+  3. Contributors and maintainers of the project
 
 ## Support
-For support, please open an issue in the GitHub repository.
+  For support, please open an issue in the GitHub repository.
