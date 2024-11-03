@@ -36,16 +36,25 @@ Features
 ## Usage
   Buying Stocks
     1. Select the investment type from the dropdown menu
+    ---
     2. Enter stock symbols (comma-separated for multiple stocks)
+    ---
     3. Input the stock name
+    ---
     4. Enter quantities (comma-separated, matching the number of symbols)
+    ---
     5. Specify the price
+    ---
     6. Click the "Buy" button to execute the transaction
+    ---
 
   Monitoring Portfolio
     1. The pie chart automatically updates to show the current portfolio distribution
+    ---
     2. Each stock's percentage in the portfolio is calculated and displayed
+    ---
     3. Color-coded messages indicate transaction success or failure
+    ---
 
 ## Code Structure
 
@@ -131,9 +140,12 @@ The system includes comprehensive error checking for:
 
 ## Acknowledgments
 
-* JFreeChart library for providing visualization capabilities
-* Java Swing for the graphical user interface
-* Contributors and maintainers of the project
+1. JFreeChart library for providing visualization capabilities
+---
+2. Java Swing for the graphical user interface
+---
+3. Contributors and maintainers of the project
+---
 
 ## Support
 For support, please open an issue in the GitHub repository.
