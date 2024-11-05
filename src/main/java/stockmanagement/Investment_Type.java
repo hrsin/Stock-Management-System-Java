@@ -5,20 +5,20 @@ package stockmanagement;
  * @author rishi
  */
 public abstract class Investment_Type{
-    protected String symbol;
-    protected String name;
-    protected int quantity = 0;
-    protected double price;
-    protected double bookValue = 0;
+    protected String symbol;      // Code representing the investment
+    protected String name;        // Name of the investment
+    protected int quantity = 0;   // Quantity owned
+    protected double price;       // Current price
+    protected double bookValue = 0; // Total invested amount
     
     /**
-     * Create a new Investment object based on the given attributes
-     * @param symbol the symbol for the Investment
-     * @param name the name of the Investment
-     * @param price the price of the Investment
-     * @throws stockmanagement.Investment_Type.EmptySymbolError
-     * @throws stockmanagement.Investment_Type.PriceRangeError
-     * @throws stockmanagement.Investment_Type.EmptyNameError
+     * Creates a new Investment object with the given details.
+     * @param symbol The code for the Investment (e.g., stock or fund)
+     * @param name The name of the Investment
+     * @param price The price per unit of the Investment
+     * @throws stockmanagement.Investment_Type.EmptySymbolError If symbol is empty
+     * @throws stockmanagement.Investment_Type.PriceRangeError If price is zero or negative
+     * @throws stockmanagement.Investment_Type.EmptyNameError If name is empty
      */
     public Investment_Type(String symbol, String name, double price) throws EmptySymbolError,
                                                                        EmptyNameError,
@@ -35,49 +35,49 @@ public abstract class Investment_Type{
     }
 
     /**
-     * Get the symbol name of the Investment
-     * @return the symbol of the Investment
+     * Gets the symbol code of the Investment.
+     * @return The symbol code
      */
     public String getSymbol() {
         return symbol;
     }
 
     /**
-     * Update the symbol name of the Investment
-     * @param symbol the new symbol name for the Investment
+     * Sets a new symbol code for the Investment.
+     * @param symbol The new symbol code
      */
     public void setSymbol(String symbol) {
         this.symbol = symbol;
     }
 
     /**
-     * Get the name of the Investment
-     * @return the name of the mutual fund
+     * Gets the name of the Investment.
+     * @return The name
      */
     public String getName() {
         return name;
     }
 
     /**
-     * Update the name of the Investment
-     * @param name the new name for the Investment
+     * Sets a new name for the Investment.
+     * @param name The new name
      */
     public void setName(String name) {
         this.name = name;
     }
 
     /**
-     * Get the number of units of this Investment currently owned
-     * @return the number of units owned
+     * Gets the current quantity owned.
+     * @return The quantity owned
      */
     public int getQuantity() {
         return quantity;
     }
 
     /**
-     * Update the number of units owned for the Investment
-     * @param quantity the new amount of units
-     * @throws stockmanagement.Investment_Type.QuantityRangeError
+     * Updates the quantity of units owned.
+     * @param quantity The new quantity
+     * @throws stockmanagement.Investment_Type.QuantityRangeError If quantity is zero or negative
      */
     public void setQuantity(int quantity) throws QuantityRangeError {
         if (quantity <= 0)
@@ -86,17 +86,17 @@ public abstract class Investment_Type{
     }
 
     /**
-     * Get the current market price of the Investment
-     * @return the current market price of the Stock
+     * Gets the current price of the Investment.
+     * @return The current price
      */
     public double getPrice() {
         return price;
     }
 
     /**
-     * Update the market price of the Investment
-     * @param price the new market price for the Investment
-     * @throws stockmanagement.Investment_Type.PriceRangeError
+     * Sets a new price for the Investment.
+     * @param price The new price
+     * @throws stockmanagement.Investment_Type.PriceRangeError If price is zero or negative
      */
     public void setPrice(double price) throws PriceRangeError {
         if (price <= 0)
@@ -105,25 +105,25 @@ public abstract class Investment_Type{
     }
 
     /**
-     * Get the current book value of the Investment
-     * @return the current book value for the Investment
+     * Gets the book value, which is the total investment cost.
+     * @return The book value
      */
     public double getBookValue() {
         return bookValue;
     }
 
     /**
-     * Update the book value of the Investment
-     * @param bookValue the new book value for the Investment
+     * Sets a new book value for the Investment.
+     * @param bookValue The new book value
      */
     public void setBookValue(double bookValue) {
         this.bookValue = bookValue;
     }
 
     /**
-     * Checks if this investment is equal to another investment
-     * @param obj the other investment to be compared
-     * @return true if symbol names match, false otherwise
+     * Checks if this investment is the same as another investment by comparing symbols.
+     * @param obj Another investment object to compare
+     * @return True if symbols match, false otherwise
      */
     @Override
     public boolean equals(Object obj) {
@@ -136,20 +136,18 @@ public abstract class Investment_Type{
         if (obj instanceof Stock) {
             Stock other = (Stock) obj;
             return symbol.equalsIgnoreCase(other.getSymbol());
-        }
-        else if (obj instanceof MutualFunds) {
+        } else if (obj instanceof MutualFunds) {
             MutualFunds other = (MutualFunds) obj;
             return symbol.equalsIgnoreCase(other.getSymbol());
-        }
-        else {
+        } else {
             Investment_Type other = (Investment_Type) obj;
             return symbol.equalsIgnoreCase(other.getSymbol());
         }
     }
-    
+
     /**
-     * Returns a string representation this Investment
-     * @return the string representation of this Investment
+     * Returns a string with the main details of the Investment.
+     * @return The Investment details as a string
      */
     @Override
     public String toString() {
@@ -158,40 +156,32 @@ public abstract class Investment_Type{
     }
     
     /**
-     * Returns the gain of the investment
-     * @return the gain on this investment
+     * Calculates the gain (profit or loss) on the investment.
+     * @return The gain amount
      */
     public abstract double getGain();
     
     /**
-     * Returns payment received from selling an investment
-     * @param amount the quantity sold
-     * @return the payment received
+     * Calculates payment received from selling part of the investment.
+     * @param amount The quantity being sold
+     * @return The payment received
      */
     public abstract double getPaymentReceived(int amount);
 
+    // Custom exceptions for various errors
     protected static class EmptySymbolError extends Exception {
-
-        public EmptySymbolError() {
-        }
+        public EmptySymbolError() {}
     }
 
     protected static class EmptyNameError extends Exception {
-
-        public EmptyNameError() {
-        }
+        public EmptyNameError() {}
     }
 
     protected static class PriceRangeError extends Exception {
-
-        public PriceRangeError() {
-        }
+        public PriceRangeError() {}
     }
     
     protected static class QuantityRangeError extends Exception {
-
-        public QuantityRangeError() {
-        }
+        public QuantityRangeError() {}
     }
 }
-
