@@ -21,24 +21,22 @@ public class Portfolio {
     private ArrayList<Investment_Type> investmentList;
     private HashMap<String, ArrayList<Integer>> keywordMappings;
 
-    /**
-     * Returns a copy of the investment array list
-     * @return the copy of investment array list
+       /**
+     * Get a copy of the investments list
      */
     public ArrayList<Investment_Type> getInvestmentList() {
         return new ArrayList(investmentList);
     }
 
     /**
-     * Sets the investment array list
-     * @param investmentList the new investment array list
+     * Set a new investments list
      */
     public void setInvestmentList(ArrayList<Investment_Type> investmentList) {
         this.investmentList = new ArrayList(investmentList);
     }
 
     /**
-     * Set up a new portfolio
+     * Create a new, empty Portfolio
      */
     public Portfolio() {
         this.keywordMappings = new HashMap<>();
@@ -46,14 +44,7 @@ public class Portfolio {
     }
     
     /**
-     * Buy a new investment or more of an existing based on the given attributes
-     * @param type the type of investment, stock or mutual fund
-     * @param symbol the symbol of the investment
-     * @param name the name for the investment
-     * @param quantity the number of shares/units to buy
-     * @param price the buy price for each share/unit
-     * @param outputArea text area where user messages should be displayed
-     * @return static constant Application.SUCCESS if purchase was successful
+     * Buys a new investment or adds more to an existing one
      */
     public int buyInvestment(int type,
                              String symbol,
@@ -87,7 +78,7 @@ public class Portfolio {
                     break;
                 
             }
-            output += "Successfully bought " + quantity + "shares of " + symbol;
+            output += "Successfully bought " + quantity + " shares of " + symbol;
             outputArea.setText(output);
         }
         catch (Exception e) {
@@ -97,13 +88,7 @@ public class Portfolio {
     }
     
     /**
-     * Sell an investment that matches the given symbol
-     * @param symbol the symbol of the investment
-     * @param amount the number of shares/units to sell
-     * @param price the sell price for each share/unit
-     * @param outputArea text area where messages are displayed
-     * @return static constant Application.SUCESS if selling was successful,
-     * otherwise one of the static constants from the Application class corresponding to an error 
+     * Sell an investment by its symbol
      */
     public int sellInvestment(String symbol,
                               int amount,
@@ -139,7 +124,7 @@ public class Portfolio {
             }
             else if (result == 0) {
                 output += ("Quantity Remaining: 0\n");
-                output += ("Stock removed from portfolio\n");
+                output += ("Investment removed from portfolio\n");
                 this.removeInvestment(investment);
             }
             else {
@@ -147,7 +132,7 @@ public class Portfolio {
                 output += String.format("New Book Value: $%.2f\n", investment.getBookValue());
             }
             output += String.format("Payment Received: $%.2f\n", investment.getPaymentReceived(amount));
-            output += "Successfully sold " + amount + " " + symbol;
+            output += "Successfully sold " + amount + " units of " + symbol;
             outputArea.setText(output);
         }
         catch (Exception e) {
@@ -157,9 +142,7 @@ public class Portfolio {
     }
     
     /**
-     * Calculates the total accumulated gain of all Stocks and Mutual Funds in the Portfolio
-     * @param outputArea text area where individual gains for each investment are displayed
-     * @return the total accumulated gain
+     * Calculate the total gain of all investments in the portfolio
      */
     public double getGain(JTextArea outputArea) {
         double totalGain = 0;
@@ -173,11 +156,7 @@ public class Portfolio {
     }
     
     /**
-     * Used to update the prices for all investments in the portfolio, one-by-one
-     * @param symbol the symbol of investment to update
-     * @param price the new price for the symbol
-     * @return Application.SUCCESS if there were no errors, or Application.ERROR_EMPTY_PORTFOLIO if
-     * portfolio contains no investments
+     * Updates the price of a specific investment by symbol
      */
     public int updatePrice(String symbol, double price) {
         if (this.isEmpty()) {
@@ -197,15 +176,14 @@ public class Portfolio {
     }
        
     /**
-     * Checks if there are any active investments in the portfolio
-     * @return true if portfolio is empty, false otherwise
+     * Checks if the portfolio is empty
      */
     public boolean isEmpty() {
         return (this.investmentList.isEmpty());
     }
     
     /**
-     * Saves all investments to external file
+     * Saves all investments to an external file
      */
     public void savePortfolio(String filepath) {
         BufferedWriter writer;
@@ -231,7 +209,7 @@ public class Portfolio {
     }
     
     /**
-     * Loads investment data from external file
+     * Loads investment data from an external file
      */
     public void loadPortfolio(String filepath) {
         BufferedReader reader;
@@ -301,9 +279,7 @@ public class Portfolio {
     }
     
     /**
-     * Updates hash map indexes used for fast search
-     * @param name the investment name
-     * @param index the index of the investment stored in ArrayList
+     * Adds keywords for searching the investments
      */
     private void addKeywordMapping(String name, int index) {
         String investmentName = name.toLowerCase();
@@ -322,60 +298,46 @@ public class Portfolio {
     }
     
     /**
-     * Updates hash map used for search when an investment is removed
-     * @param name the name of the removed investment
-     * @param index the index of the investment that was removed from ArrayList
+     * Removes keywords from the search index when an investment is removed
      */
     private void removeKeywordMapping(String name, int index) {
         String investmentName = name.toLowerCase();
         String[] keywords = investmentName.split(" ");
         for (String keyword : keywords) {
-            if (this.keywordMappings.containsKey(keyword) &&
-                this.keywordMappings.get(keyword).contains(index)) {
-                ArrayList<Integer> mappings = this.keywordMappings.get(keyword);
-                mappings.remove((Integer) index);
-                if (mappings.isEmpty()) {
+            if (this.keywordMappings.containsKey(keyword)) {
+                ArrayList<Integer> value = this.keywordMappings.get(keyword);
+                value.removeIf(v -> (v == index));
+                if (value.isEmpty()) {
                     this.keywordMappings.remove(keyword);
                 }
             }
         }
-        for (ArrayList<Integer> mapping : this.keywordMappings.values()) {
-            for (Integer i : mapping) {
-                if (i > index) {
-                    i--;
-                }
-            }
-        }
     }
     
     /**
-     * Removes an investment from the portfolio along with any hash map keyword mappings
-     * @param i The investment to be removed
-     */
-    private void removeInvestment(Investment_Type i) {
-        this.removeKeywordMapping(i.getName(), this.investmentList.indexOf(i));
-        this.investmentList.remove(i);
-    }
-    
-    /**
-     * Adds an investment to the portfolio along with its hash map keywords mappings
-     * @param i The investment to be added
+     * Adds an investment to the portfolio
      */
     private void addInvestment(Investment_Type i) {
         this.investmentList.add(i);
-        this.addKeywordMapping(i.getName(), this.investmentList.size()-1);
+        int index = this.investmentList.indexOf(i);
+        this.addKeywordMapping(i.getName(), index);
     }
     
+    /**
+     * Removes an investment from the portfolio
+     */
+    private void removeInvestment(Investment_Type i) {
+        int index = this.investmentList.indexOf(i);
+        this.investmentList.remove(i);
+        this.removeKeywordMapping(i.getName(), index);
+    }
+    
+    /**
+     * Handles exceptions by showing an error
+     */
     private int exceptionHandler(Exception e) {
-        if (e instanceof Investment_Type.EmptyNameError)
-            return Stock_Management.EMPTY_NAME;
-        if (e instanceof Investment_Type.EmptySymbolError)
-            return Stock_Management.EMPTY_SYMBOL;
-        if (e instanceof Investment_Type.PriceRangeError)
-            return Stock_Management.INVALID_PRICE;
-        if (e instanceof Investment_Type.QuantityRangeError)
-            return Stock_Management.INVALID_QUANTITY;
-        return Stock_Management.UNKNOWN_ERROR;
+        Stock_Management.showErrorDialog(e.getMessage());
+        return Stock_Management.ERROR_UNKNOWN;
     }
 }
 
