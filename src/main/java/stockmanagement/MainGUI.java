@@ -40,7 +40,6 @@ public class MainGUI extends JFrame {
         setBackground(Color.BLACK);
         setForeground(Color.CYAN);
         Font font = new Font("CALIBRI", Font.BOLD, 25); 
-        // Modified by Harsh
         // Button declarations
         JButton menuProfile = new JButton("Profile");
         JButton menuBuyBtn = new JButton("Buy Investment");
