@@ -195,77 +195,7 @@ public class Portfolio {
         }
         return Stock_Management.SUCCESS;
     }
-    
-    /**
-     * Displays the details of all investments that match a given search criteria
-     * @param symbol the symbol to match
-     * @param keywords the word-level keywords to match in the investment name
-     * @param minPrice the investment price must be greater than this value
-     * @param maxPrice  the investment price must be lower than this value
-     * @param outputArea text area where results of output will be displayed
-     */
-    public void search(String symbol, String[] keywords,
-                       double minPrice, double maxPrice, JTextArea outputArea) {
-//        String output = "";
-//        ArrayList<Integer> possibleIndexes = new ArrayList<>();
-//        if (keywords.length == 0) {
-//            for (int i = 0; i < this.investmentList.size(); i++) {
-//                possibleIndexes.add(i);
-//            }
-//        }
-//        else {
-//            boolean firstRun = true;
-//            for (String keyword : keywords) {
-//                if (this.keywordMappings.containsKey(keyword)) {
-//                    ArrayList<Integer> matches = this.keywordMappings.get(keyword);
-//                    if (firstRun) {
-//                        for (Integer i : matches)
-//                            possibleIndexes.add(i);
-//                        firstRun = false;
-//                    }
-//                    else {
-//                        for (Integer i : new ArrayList<Integer>(possibleIndexes)) {
-//                            if (!matches.contains(i))
-//                                possibleIndexes.remove(i);
-//                        }
-//                    }
-//                }
-//                else {
-//                    possibleIndexes = new ArrayList<>();
-//                }
-//            }
-//        }
-//        if (!(minPrice == 0 && maxPrice == 0 && symbol.isEmpty())) {
-//            for (Integer i : new ArrayList<Integer>(possibleIndexes)) {
-//                Investment investment = this.investmentList.get(i);
-//                double investmentPrice = investment.getPrice();
-//                String investmentSymbol = investment.getSymbol();
-//                boolean match = true;
-//                if (minPrice != 0 && investmentPrice < minPrice)
-//                    match = false;
-//                if (maxPrice != 0 && investmentPrice > maxPrice)
-//                    match = false;
-//                if (!symbol.isEmpty() && !investmentSymbol.equalsIgnoreCase(symbol))
-//                    match = false;
-//                if (!match)
-//                    possibleIndexes.remove(i);
-//            }
-//        }
-//        if (possibleIndexes.isEmpty()) {
-//            output = ("No results found");
-//        }
-//        else {
-//            for (Integer i : possibleIndexes) {
-//                Investment investment = this.investmentList.get(i);
-//                if (investment instanceof Stock)
-//                    output += ((Stock) investment).toString() + "\n";
-//                else if (investment instanceof MutualFund)
-//                    output += ((MutualFund) investment).toString() + "\n";
-//            }
-//        }
-//        outputArea.setText(output);
-    }
-    
+       
     /**
      * Checks if there are any active investments in the portfolio
      * @return true if portfolio is empty, false otherwise
